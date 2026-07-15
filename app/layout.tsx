@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "./globals.css"; // ✅ مهم
 
 export const metadata: Metadata = {
   title: "Voxora AI",
@@ -15,4 +16,4 @@ export default function RootLayout({
       <body>{children}</body>
     </html>
   );
-    }
+}
