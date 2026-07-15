@@ -1,0 +1,5 @@
+<img
+  src="https://i.pravatar.cc/300?img=12"
+  alt="avatar"
+  style={{ width: "100%", borderRadius: "10px" }}
+/>
