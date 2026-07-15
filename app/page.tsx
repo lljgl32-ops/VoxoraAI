@@ -1,4 +1,5 @@
-  <header className="flex justify-between items-center p-6">
+import AvatarCard from "./components/app/AvatarCard";
+<header className="flex justify-between items-center p-6">
           <div>
             <h1 className="text-3xl font-bold text-blue-700">
               VoxoraAI
