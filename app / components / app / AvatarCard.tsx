@@ -1,4 +1,4 @@
-cexport default function AvatarCard() {
+export default function AvatarCard() {
   return (
     <div style={{
       background: "#fff",
