@@ -1,13 +1,4 @@
-import AvatarCard from "../components/AvatarCard";
-
-export default function Home() {
-  return (
-    <>
-      <AvatarCard />
-      <main className="min-h-screen bg-gradient-to-b from-blue-100 to-white text-gray-900">
-
-        {/* Header */}
-        <header className="flex justify-between items-center p-6">
+  <header className="flex justify-between items-center p-6">
           <div>
             <h1 className="text-3xl font-bold text-blue-700">
               VoxoraAI
