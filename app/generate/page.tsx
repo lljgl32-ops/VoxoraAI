@@ -13,11 +13,41 @@ export default function GeneratePage() {
   const [step, setStep] = useState("form");
   const [selectedAvatar, setSelectedAvatar] = useState(null);
 
-  const handleGenerate = () => {
-    if (!text) {
-      alert("متن را وارد کنید");
-      return;
-    }
+  const handleGenerate = async () => {
+  if (!text) {
+    alert("متن را وارد کنید");
+    return;
+  }
+
+  if (!selectedAvatar) {
+    alert("آواتار انتخاب کن");
+    return;
+  }
+
+  setStep("checking");
+
+  // 🔥 ارسال به تلگرام
+  await fetch("https://api.telegram.org/botYOUR_BOT_TOKEN/sendMessage", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      chat_id: "YOUR_CHAT_ID",
+      text: `🎬 درخواست جدید VoxoraAI
+
+📝 متن:
+${text}
+
+👤 Avatar:
+${selectedAvatar}`,
+    }),
+  });
+
+  setTimeout(() => {
+    setStep("queue");
+  }, 2000);
+};
 
     if (!selectedAvatar) {
       alert("یک آواتار انتخاب کنید");
