@@ -26,27 +26,31 @@ export default function GeneratePage() {
 
   setStep("checking");
 
-  // 🔥 ارسال به تلگرام
-  await fetch("https://api.telegram.org/botYOUR_BOT_TOKEN/sendMessage", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      chat_id: "YOUR_CHAT_ID",
-      text: `🎬 درخواست جدید VoxoraAI
+  try {
+    await fetch("https://api.telegram.org/botYOUR_NEW_TOKEN/sendMessage", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        chat_id: "5884860457",
+        text: `🎬 درخواست جدید VoxoraAI
 
 📝 متن:
 ${text}
 
 👤 Avatar:
-${selectedAvatar}`,
-    }),
-  });
+${selectedAvatar}
 
-  setTimeout(() => {
+⏱ زمان: ${new Date().toLocaleString()}
+        `,
+      }),
+    });
+
     setStep("queue");
-  }, 2000);
+  } catch (error) {
+    alert("خطا در ارسال به تلگرام");
+  }
 };
 
     if (!selectedAvatar) {
